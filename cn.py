@@ -9,19 +9,19 @@ def dup_rota(line, l):
         # Leadin Effect
         l.layer = 0
 
-        l.start_time = line.start_time + char.start_time/2.5
+        l.start_time = line.start_time + char.start_time/3.5
         l.end_time = line.end_time
         l.dur = l.end_time - l.start_time
 
         l.text =(
             "{\\an5\\pos(%.3f,%.3f)"
-            "\org(%.3f,%.3f)\\frz180\\t(0,%d,1.5,\\frz0)} %s"
+            "\org(%.3f,%.3f)\\frz180\\alpha&FF&\\t(0,%d,1.5,\\frz0\\alpha&00&)} %s"
             % (
                 char.center * 2/3 + line.center/3,
                 char.middle * 2/3 + line.center/3,
 				char.center * 2/3 + line.center/3,
                 char.middle * 2/3 + line.center/3,
-                char.duration,
+                200,
                 char.text,
             )
         )
